@@ -20,7 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@root')->name('root');
 
-Auth::routes();
+Auth::routes([
+    'register' => true,
+    'reset' => true,
+    'verify' => true, // Email Verification
+]);
+
+/* Email Verification */
+// Route::emailVerification();
+
 /*
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
