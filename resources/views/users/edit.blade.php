@@ -39,7 +39,14 @@
                             <input type="file" name="avatar" class="form-control-file">
                             @if($user->avatar)
                                 <br>
-                                <img class="thumbnail img-responsive" src="{{ $user->avatar }}" width="200"/>
+                                <img class="thumbnail img-responsive"
+                                     src="{{ $user->avatar ?: 'https://iocaffcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600' }}"
+                                     width="200"/>
+                            @else
+                                <br>
+                                <img class="thumbnail img-responsive"
+                                     src="https://iocaffcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600"
+                                     width="200"/>
                             @endif
                         </div>
                         <div class="well well-sm">
