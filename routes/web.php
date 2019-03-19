@@ -3,6 +3,18 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::get('test', function () {
+    $qq = base64_decode('MzI1Njg0MDkzNA==');
+    $wechat = base64_decode('MTc2MjMyMzk4ODc=');
+    $email = base64_decode('c2Vhb255QG91dGxvb2suY29t');
+    echo '<br>';
+    echo $qq;
+    echo '<br>';
+    echo $wechat;
+    echo '<br>';
+    echo $email;
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
