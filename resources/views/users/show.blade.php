@@ -5,7 +5,6 @@
 @section('content')
 
     <div class="row">
-
         <div class="col-lg-3 col-md-3 hidden-sm hidden-xs user-info">
             <div class="card ">
                 <img class="card-img-top"
@@ -32,7 +31,6 @@
                 </div>
             </div>
             <hr>
-
             {{-- 用户发布的内容 --}}
             <div class="card ">
                 <div class="card-body">

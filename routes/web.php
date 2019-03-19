@@ -13,6 +13,16 @@ Route::get('test', function () {
     echo $wechat;
     echo '<br>';
     echo $email;
+    echo '<br>';
+    echo bin2hex('KEY');
+    echo '<br>';
+    echo hex2bin('56414c5545');
+    echo '<br>';
+    echo strlen('{"key1":"value1","key2":"value2"}');
+    echo '<br>';
+    echo strlen(bin2hex('{"key1":"value1","key2":"value2"}'));
+    echo '<br>';
+    echo bin2hex('{"key1":"value1","key2":"value2"}');
 });
 
 /*
