@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Topic;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
+use App\Models\Topic;
+use Illuminate\Http\Request;
 
 class TopicsController extends Controller
 {
@@ -14,18 +14,19 @@ class TopicsController extends Controller
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $topics = Topic::with('user', 'category')->paginate(30);
+        // $topics = Topic::with('user', 'category')->paginate(30);
+        $topics = Topic::withOrder($request->order)->paginate(20);
         return view('topics.index', compact('topics'));
     }
 
-    public function show(Topic $topic)
+    public function show(Request $request, Topic $topic)
     {
         return view('topics.show', compact('topic'));
     }
 
-    public function create(Topic $topic)
+    public function create(Request $request, Topic $topic)
     {
         return view('topics.create_and_edit', compact('topic'));
     }
@@ -36,7 +37,7 @@ class TopicsController extends Controller
         return redirect()->route('topics.show', $topic->id)->with('message', 'Created successfully.');
     }
 
-    public function edit(Topic $topic)
+    public function edit(Request $request, Topic $topic)
     {
         $this->authorize('update', $topic);
         return view('topics.create_and_edit', compact('topic'));
@@ -50,7 +51,7 @@ class TopicsController extends Controller
         return redirect()->route('topics.show', $topic->id)->with('message', 'Updated successfully.');
     }
 
-    public function destroy(Topic $topic)
+    public function destroy(Request $request, Topic $topic)
     {
         $this->authorize('destroy', $topic);
         $topic->delete();
