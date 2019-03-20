@@ -15,4 +15,9 @@ class Category extends Model
         'description',
         'post_count',
     ];
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
