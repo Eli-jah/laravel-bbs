@@ -23,6 +23,30 @@ Route::get('test', function () {
     echo strlen(bin2hex('{"key1":"value1","key2":"value2"}'));
     echo '<br>';
     echo bin2hex('{"key1":"value1","key2":"value2"}');
+    echo '<br>';
+    echo str_pad(strtoupper(dechex(60403)), 8, '0', STR_PAD_LEFT);
+    echo '<br>';
+    echo hexdec(10);
+    echo '<br>';
+    // echo hexdec(ltrim('000000', '0'));
+    // echo ltrim('000000', '0');
+    // echo hexdec('');
+    echo hex2bin('23235F2A2A');
+    echo '<br>';
+    echo dechex('20201');
+    echo '<br>';
+    echo hex2bin('50');
+    echo '<br>';
+    echo bin2hex('"22222222222222222222222222222222"');
+    echo '<br>';
+    echo bin2hex('22222222222222222222222222222222');
+    echo '<br>';
+    echo decbin(hexdec('0x50'));
+    echo '<br>';
+    echo hex2bin('3039');
+    echo '<br>';
+    echo hexdec(3039);
+    // echo hex2bin('505050505050');
 });
 
 /*
