@@ -70,7 +70,7 @@ class TopicsController extends Controller
 
         return redirect()
             ->route('topics.index')
-            ->with('message', '删除成功！');
+            ->with('message', '成功删除！');
     }
 
     # For uploading image

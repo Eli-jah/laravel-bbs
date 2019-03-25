@@ -35,6 +35,12 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    // For ModelPolicy: $user->isAuthorOf($model);
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
     public function topics()
     {
         return $this->hasMany(Topic::class);
