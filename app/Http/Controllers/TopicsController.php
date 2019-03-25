@@ -49,6 +49,8 @@ class TopicsController extends Controller
     public function edit(Request $request, Topic $topic)
     {
         $this->authorize('update', $topic);
+        // $topics = Topic::with('user', 'category')->paginate(30);
+        $topics = Topic::withOrder($request->order)->paginate(20);
         return view('topics.create_and_edit', compact('topic'));
     }
 
