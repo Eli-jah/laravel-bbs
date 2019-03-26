@@ -60,7 +60,8 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'queue' => env('REDIS_QUEUE', 'default'),
+            // 'queue' => env('REDIS_QUEUE', 'default'),
+            'queue' => env('REDIS_QUEUE_DB', 'queue'),
             'retry_after' => 90,
             'block_for' => null,
         ],
