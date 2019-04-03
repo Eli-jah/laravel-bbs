@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('test', function () {
+    $password = \Illuminate\Support\Facades\Hash::check('secret', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm');
+    $password = \Illuminate\Support\Facades\Hash::make('123456');
+    dd($password);
     $qq = base64_decode('MzI1Njg0MDkzNA==');
     $wechat = base64_decode('MTc2MjMyMzk4ODc=');
     $email = base64_decode('c2Vhb255QG91dGxvb2suY29t');
@@ -108,3 +111,5 @@ Route::get('topics/{topic}/{slug?}', 'TopicsController@show')->name('topics.show
 
 # For uploading image
 Route::post('upload_image', 'TopicsController@uploadImage')->name('topics.upload_image');
+
+Route::resource('replies', 'RepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
