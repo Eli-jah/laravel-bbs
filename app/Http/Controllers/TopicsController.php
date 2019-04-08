@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
 use App\Models\Category;
 use App\Models\Topic;
@@ -91,7 +90,7 @@ class TopicsController extends Controller
         $data = [
             'success' => false,
             'msg' => '上传失败!',
-            'file_path' => ''
+            'file_path' => '',
         ];
         // 判断是否有上传文件，并赋值给 $file
         if ($file = $request->upload_file) {

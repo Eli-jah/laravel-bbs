@@ -32,10 +32,11 @@ class TopicsTableSeeder extends Seeder
 
                 // 话题分类，同上
                 $topic->category_id = $faker->randomElement($category_ids);
+                $topic->save(); // 触发 observer 之 saved 事件
             });
 
         // 将数据集合转换为数组，并插入到数据库中
-        Topic::insert($topics->toArray());
+        // Topic::insert($topics->toArray());
     }
 }
 

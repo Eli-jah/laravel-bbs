@@ -7,7 +7,7 @@ use App\Jobs\TranslateSlug;
 use App\Models\Topic;
 
 // creating, created, updating, updated, saving,
-// saved,  deleting, deleted, restoring, restored
+// saved, deleting, deleted, restoring, restored
 
 class TopicObserver
 {
