@@ -16410,6 +16410,12 @@ body {
   color: inherit;
 }
 
+/* Add container and footer space */
+
+#app > div.container {
+  margin-bottom: 100px;
+}
+
 /* User register page */
 
 .register-page img.captcha {
@@ -16939,9 +16945,18 @@ body {
   color: #b3b3b3;
 }
 
-/* Add container and footer space */
+/* Notification */
 
-#app > div.container {
-  margin-bottom: 100px;
+.notification-badge .badge {
+  font-size: 12px;
+  margin-top: 14px;
+}
+
+.notification-badge .badge-secondary {
+  background-color: #EBE8E8;
+}
+
+.notification-badge .badge-hint {
+  background-color: #d15b47 !important;
 }
 

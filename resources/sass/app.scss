@@ -61,6 +61,11 @@ body {
   }
 }
 
+/* Add container and footer space */
+#app > div.container {
+  margin-bottom: 100px;
+}
+
 /* User register page */
 .register-page {
   img.captcha {
@@ -109,7 +114,7 @@ body {
 
 /* Simditor */
 .simditor-body img {
-  max-width:100%;
+  max-width: 100%;
 }
 
 /* Topic Show Page */
@@ -142,7 +147,18 @@ body {
   }
 }
 
-/* Add container and footer space */
-#app > div.container {
-  margin-bottom: 100px;
+/* Notification */
+.notification-badge {
+  .badge {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  .badge-secondary {
+    background-color: #EBE8E8;
+  }
+
+  .badge-hint {
+    background-color: #d15b47 !important;
+  }
 }
