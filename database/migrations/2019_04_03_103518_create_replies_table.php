@@ -10,7 +10,9 @@ class CreateRepliesTable extends Migration
         Schema::create('replies', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('topic_id')->unsigned()->default(0)->index();
+            // $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->default(0)->index();
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('content');
             $table->timestamps();
         });

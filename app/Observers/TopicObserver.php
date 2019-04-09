@@ -5,6 +5,7 @@ namespace App\Observers;
 use App\Handlers\SlugTranslateHandler;
 use App\Jobs\TranslateSlug;
 use App\Models\Topic;
+use Illuminate\Support\Facades\DB;
 
 // creating, created, updating, updated, saving,
 // saved, deleting, deleted, restoring, restored
@@ -44,10 +45,18 @@ class TopicObserver
     public function saved(Topic $topic)
     {
         // 如 slug 字段无内容，即使用翻译器对 title 进行翻译
-        if ( ! $topic->slug) {
+        if (!$topic->slug) {
 
             // 推送任务到队列 [需要确保对象$topic有id属性值: $topic->id]
             dispatch(new TranslateSlug($topic));
         }
+    }
+
+    public function deleted(Topic $topic)
+    {
+        // 需注意，在模型监听器中，数据库操作需避免再次触发 Eloquent 事件，以免造成联动逻辑冲突。
+        // 意即：$topic->replies->delete(); 将会触发 ReplyObserver 中的 deleted 事件。
+        // 所以这里我们使用了 DB 类进行操作。
+        DB::table('replies')->where('topic_id', $topic->id)->delete();
     }
 }

@@ -59,6 +59,12 @@ class Topic extends Model
         ], $params));
     }
 
+    public function updateReplyCount()
+    {
+        $this->reply_count = $this->replies->count();
+        $this->save();
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
