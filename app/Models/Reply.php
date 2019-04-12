@@ -4,6 +4,10 @@ namespace App\Models;
 
 class Reply extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     * @var array
+     */
     protected $fillable = [
         'topic_id',
         'user_id',
