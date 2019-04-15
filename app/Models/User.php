@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\ActiveUserHelper;
+use App\Models\Traits\LastActivatedAtHelper;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -23,6 +24,8 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasRoles;
 
     use ActiveUserHelper;
+
+    use LastActivatedAtHelper;
 
     /**
      * The attributes that are mass assignable.
