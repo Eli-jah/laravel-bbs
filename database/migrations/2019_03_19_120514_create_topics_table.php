@@ -7,6 +7,10 @@ class CreateTopicsTable extends Migration
 {
     public function up()
     {
+        /**
+         * Run the migrations.
+         * @return void
+         */
         Schema::create('topics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->index();
@@ -25,6 +29,10 @@ class CreateTopicsTable extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     * @return void
+     */
     public function down()
     {
         Schema::drop('topics');
