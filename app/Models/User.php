@@ -11,8 +11,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Traits\HasRoles;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail, JWTSubject
 {
     // use Notifiable, MustVerifyEmailTrait;
     use MustVerifyEmailTrait;
@@ -121,4 +122,16 @@ class User extends Authenticatable implements MustVerifyEmail
 
         $this->attributes['avatar'] = $path;
     }
+
+    /* for the implementation of JWTSubject */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+    /* for the implementation of JWTSubject */
 }

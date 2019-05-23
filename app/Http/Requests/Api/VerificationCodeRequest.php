@@ -35,7 +35,7 @@ class VerificationCodeRequest extends FormRequest
     {
         return [
             'captcha_key' => '图片验证码 key',
-            'captcha_code' => '图片验证码',
+            'captcha_code' => '图片验证码 code',
         ];
     }
 }
