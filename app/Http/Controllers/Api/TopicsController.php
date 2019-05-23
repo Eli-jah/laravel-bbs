@@ -71,13 +71,17 @@ class TopicsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Http\Requests\Api\TopicRequest $request
      * @param  \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topic $topic)
+    public function update(TopicRequest $request, Topic $topic)
     {
-        //
+        $this->authorize('update', $topic);
+
+        $topic->update($request->all());
+
+        return $this->response->item($topic, new TopicTransformer());
     }
 
     /**
