@@ -20,7 +20,12 @@ class ReplyObserver
         // $reply->topic->increment('reply_count', 1);
         $reply->topic->updateReplyCount();
         // 通知话题作者有新的评论
-        $reply->topic->user->notify(new TopicReplied($reply));
+        // $reply->topic->user->notify(new TopicReplied($reply));
+        $topic = $reply->topic;
+        // 如果评论的作者不是话题的作者，才需要通知
+        if ( ! $reply->user->isAuthorOf($topic)) {
+            $topic->user->notify(new TopicReplied($reply));
+        }
     }
 
     public function deleted(Reply $reply)
