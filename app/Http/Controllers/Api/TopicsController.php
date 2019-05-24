@@ -45,7 +45,7 @@ class TopicsController extends Controller
      * Display a listing of the topics of some user.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Topic $topic
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function userIndex(Request $request, User $user)
@@ -108,7 +108,7 @@ class TopicsController extends Controller
      */
     public function show(Topic $topic)
     {
-        //
+        return $this->response->item($topic, new TopicTransformer());
     }
 
     /**
