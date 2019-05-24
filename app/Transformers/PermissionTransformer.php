@@ -5,7 +5,7 @@ namespace App\Transformers;
 use League\Fractal\TransformerAbstract;
 use Spatie\Permission\Models\Permission;
 
-class PermissionsTransformer extends TransformerAbstract
+class PermissionTransformer extends TransformerAbstract
 {
     public function transform(Permission $permission)
     {
