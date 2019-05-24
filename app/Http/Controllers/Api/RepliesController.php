@@ -90,8 +90,15 @@ class RepliesController extends Controller
      * @param  \App\Models\Reply $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Topic $topic, Reply $reply)
     {
-        //
+        if($reply->topic_id != $topic->id){
+            return $this->response->errorBadRequest();
+        }
+
+        $this->authorize('destroy', $reply);
+        $reply->delete();
+
+        return $this->response->noContent();
     }
 }

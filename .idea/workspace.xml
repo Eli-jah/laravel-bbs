@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f490e8-330b-4abc-bc0c-aea059dbb970" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Requests/Request.php" afterPath="$PROJECT_DIR$/app/Http/Requests/Request.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/api.php" afterPath="$PROJECT_DIR$/routes/api.php" />
     </list>
     <ignored path="larabbs.iws" />
@@ -26,43 +29,10 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-32.041668">
-              <caret line="106" column="51" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+            <state vertical-scroll-proportion="-30.166666">
+              <caret line="108" column="85" selection-start-line="108" selection-start-column="85" selection-end-line="108" selection-end-column="85" />
+              <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RepliesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76421803">
-              <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
-              <folding>
-                <element signature="e#88#127#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReplyRequest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25">
-              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReplyTransformer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Transformers/ReplyTransformer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-              <folding>
-                <element signature="e#36#57#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -70,10 +40,34 @@
       <file leaf-file-name="TopicsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TopicsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25">
+            <state vertical-scroll-proportion="-9.916667">
               <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
               <folding>
                 <element signature="e#88#127#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RepliesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-33.916668">
+              <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+              <folding>
+                <element signature="e#88#127#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReplyPolicy.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Policies/ReplyPolicy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.07109005">
+              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+              <folding>
+                <element signature="e#32#52#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
         <option value="$PROJECT_DIR$/app/Observers/UserObserver.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TopicsController.php" />
@@ -134,9 +127,10 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Transformers/TopicTransformer.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/TopicsController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php" />
         <option value="$PROJECT_DIR$/app/Transformers/ReplyTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/Request.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php" />
       </list>
     </option>
@@ -355,6 +349,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Providers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larabbs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="larabbs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Policies" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,31 +684,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/CaptchasController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/ReplyPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Policies/Policy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10663507">
-          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -855,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UserRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/dingo/api/src/Http/FormRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.541667">
@@ -883,13 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ReplyRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_19_120514_create_topics_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375">
@@ -908,13 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375">
           <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.125">
-          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1021,16 +991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TopicsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25">
-          <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
-          <folding>
-            <element signature="e#88#127#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Transformers/ReplyTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
@@ -1041,28 +1001,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.875">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/ReplyRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.26658767">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/Api/UserRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0841233">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ReplyRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/TopicRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-32.041668">
-          <caret line="106" column="51" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+        <state vertical-scroll-proportion="-30.166666">
+          <caret line="108" column="85" selection-start-line="108" selection-start-column="85" selection-end-line="108" selection-end-column="85" />
+          <caret line="109" column="50" selection-start-line="109" selection-start-column="50" selection-end-line="109" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/TopicsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.916667">
+          <caret line="110" column="34" selection-start-line="110" selection-start-column="34" selection-end-line="110" selection-end-column="34" />
+          <folding>
+            <element signature="e#88#127#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/RepliesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76421803">
-          <caret line="43" column="50" selection-start-line="43" selection-start-column="50" selection-end-line="43" selection-end-column="50" />
+        <state vertical-scroll-proportion="-33.916668">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
           <folding>
             <element signature="e#88#127#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/ReplyPolicy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07109005">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#32#52#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
