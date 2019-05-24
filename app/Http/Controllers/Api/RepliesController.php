@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\ReplyRequest;
 use App\Models\Reply;
 use App\Models\Topic;
+use App\Models\User;
 use App\Transformers\ReplyTransformer;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,43 @@ class RepliesController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Topic $topic)
     {
-        //
+        // 关闭 Dingo 的预加载。
+        // 有可能使用深层 include 地方都可以暂时这么处理。
+        app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
+
+        $replies = $topic->replies()->paginate(20);
+
+        if ($request->include) {
+            $replies->load($request->include);
+        }
+
+        return $this->response->paginator($replies, new ReplyTransformer());
+    }
+
+    /**
+     * Display a listing of the topic replies from some user.
+     *
+     * @param \App\Models\User $user
+     * @return \Illuminate\Http\Response
+     */
+    public function userIndex(Request $request, User $user)
+    {
+        // 关闭 Dingo 的预加载。
+        // 有可能使用深层 include 地方都可以暂时这么处理。
+        app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
+
+        $replies = $user->replies()->paginate(20);
+
+        if ($replies->include) {
+            $replies->load($request->include);
+        }
+
+        return $this->response->paginator($replies, new ReplyTransformer());
     }
 
     /**
@@ -92,7 +125,7 @@ class RepliesController extends Controller
      */
     public function destroy(Topic $topic, Reply $reply)
     {
-        if($reply->topic_id != $topic->id){
+        if ($reply->topic_id != $topic->id) {
             return $this->response->errorBadRequest();
         }
 
