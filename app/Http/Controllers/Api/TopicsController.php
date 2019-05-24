@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 // use App\Http\Controllers\Api\Controller;
 use App\Http\Requests\Api\TopicRequest;
 use App\Models\Topic;
+use App\Models\User;
 use App\Transformers\TopicTransformer;
 use Illuminate\Http\Request;
 
@@ -13,11 +14,64 @@ class TopicsController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Topic $topic)
     {
-        //
+        $query = $topic->query();
+
+        if ($category_id = $request->category_id) {
+            $query->where('category_id', $category_id);
+        }
+
+        switch ($request->order) {
+            case 'recent':
+                $query->recent();
+                break;
+
+            default:
+                $query->recentReplied();
+                break;
+        }
+
+        $topics = $query->paginate(20);
+
+        return $this->response->paginator($topics, new TopicTransformer());
+    }
+
+    /**
+     * Display a listing of the topics of some user.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Topic $topic
+     * @return \Illuminate\Http\Response
+     */
+    public function userIndex(Request $request, User $user)
+    {
+        /*$topics = $user->topics()->recent()
+            ->paginate(20);*/
+
+        $query = $user->topics();
+
+        if ($category_id = $request->category_id) {
+            $query->where('category_id', $category_id);
+        }
+
+        switch ($request->order) {
+            case 'recent':
+                $query->recent();
+                break;
+
+            default:
+                $query->recentReplied();
+                break;
+        }
+
+        $topics = $query->paginate(20);
+
+        return $this->response->paginator($topics, new TopicTransformer());
     }
 
     /**
