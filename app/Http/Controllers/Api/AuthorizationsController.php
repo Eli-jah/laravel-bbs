@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\Api\AuthorizationRequest;
 use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
+use App\Traits\PassportToken;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -16,6 +17,8 @@ use Zend\Diactoros\Response as Psr7Response;
 
 class AuthorizationsController extends Controller
 {
+    use PassportToken;
+
     public function store(AuthorizationRequest $request, AuthorizationServer $server, ServerRequestInterface $serverRequest)
     {
         // $username = $request->input('username');
@@ -124,8 +127,10 @@ class AuthorizationsController extends Controller
         }
 
         // return $this->response->array(['token' => $user->id]);
-        $token = Auth::guard('api')->fromUser($user);
-        return $this->respondWithToken($token);
+        /*$token = Auth::guard('api')->fromUser($user);
+        return $this->respondWithToken($token);*/
+        $result = $this->getBearerTokenByUser($user, '1', false);
+        return $this->response->array($result)->setStatusCode(201);
     }
 
     protected function respondWithToken($token)
