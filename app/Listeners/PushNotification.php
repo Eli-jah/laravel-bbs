@@ -24,7 +24,7 @@ class PushNotification implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  object $event
+     * @param  \Illuminate\Notifications\DatabaseNotification $notification
      * @return void
      */
     public function handle(DatabaseNotification $notification)
