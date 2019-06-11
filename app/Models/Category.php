@@ -16,6 +16,7 @@ class Category extends Model
         'post_count',
     ];
 
+    /* Eloquent Relationships */
     public function topics()
     {
         return $this->hasMany(Topic::class);

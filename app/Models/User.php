@@ -61,44 +61,6 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
-    // For ModelPolicy: $user->isAuthorOf($model);
-    public function isAuthorOf($model)
-    {
-        return $this->id == $model->user_id;
-    }
-
-    public function topics()
-    {
-        return $this->hasMany(Topic::class);
-    }
-
-    public function replies()
-    {
-        return $this->hasMany(Reply::class);
-    }
-
-    public function notify($instance)
-    {
-        // 如果要通知的人是当前用户，就不必通知了！
-        if ($this->id == Auth::id()) {
-            return;
-        }
-
-        // 只有数据库类型通知才需提醒，直接发送 Email 或者其他的都 Pass
-        if (method_exists($instance, 'toDatabase')) {
-            $this->increment('notification_count');
-        }
-
-        $this->laravelNotify($instance);
-    }
-
-    public function markAsRead()
-    {
-        $this->notification_count = 0;
-        $this->save();
-        $this->unreadNotifications->markAsRead();
-    }
-
     public function setPasswordAttribute($value)
     {
         // 如果值的长度等于 60，即认为是已经做过加密的情况
@@ -124,6 +86,34 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
         $this->attributes['avatar'] = $path;
     }
 
+    // For ModelPolicy: $user->isAuthorOf($model);
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
+
+    public function notify($instance)
+    {
+        // 如果要通知的人是当前用户，就不必通知了！
+        if ($this->id == Auth::id()) {
+            return;
+        }
+
+        // 只有数据库类型通知才需提醒，直接发送 Email 或者其他的都 Pass
+        if (method_exists($instance, 'toDatabase')) {
+            $this->increment('notification_count');
+        }
+
+        $this->laravelNotify($instance);
+    }
+
+    public function markAsRead()
+    {
+        $this->notification_count = 0;
+        $this->save();
+        $this->unreadNotifications->markAsRead();
+    }
+
     /* for the implementation of JWTSubject */
     public function getJWTIdentifier()
     {
@@ -135,4 +125,15 @@ class User extends Authenticatable implements MustVerifyEmail, JWTSubject
         return [];
     }
     /* for the implementation of JWTSubject */
+
+    /* Eloquent Relationships */
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
 }

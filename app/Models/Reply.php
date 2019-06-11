@@ -14,6 +14,16 @@ class Reply extends Model
         'content',
     ];
 
+    /**
+     * The relationships that should be touched on save.
+     *
+     * @var array
+     */
+    /*protected $touches = [
+        'topic'
+    ];*/
+
+    /* Eloquent Relationships */
     public function topic()
     {
         return $this->belongsTo(Topic::class);

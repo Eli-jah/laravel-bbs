@@ -16,6 +16,7 @@ class Image extends Model
         'path',
     ];
 
+    /* Eloquent Relationships */
     public function user()
     {
         return $this->belongsTo(User::class);

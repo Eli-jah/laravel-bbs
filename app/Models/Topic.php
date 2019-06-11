@@ -65,6 +65,7 @@ class Topic extends Model
         $this->save();
     }
 
+    /* Eloquent Relationships */
     public function category()
     {
         return $this->belongsTo(Category::class);
